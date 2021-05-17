@@ -1,3 +1,5 @@
+import math
+
 width,height = 1000, 1000
 
 def Activate(value):
@@ -11,4 +13,4 @@ def translate(value, min1, max1, min2, max2):
 
 def lineFunction(x):
     # wkt y = mx + b
-    return 0.45 * x + 0.3
+    return 0.45* x + 0.3

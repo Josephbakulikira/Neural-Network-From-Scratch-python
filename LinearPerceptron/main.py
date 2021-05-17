@@ -14,7 +14,7 @@ fps = 30
 
 points = []
 
-for i in range(100):
+for i in range(20):
     x = random.uniform(-1, 1)
     y = random.uniform(-1, 1)
     breed = 0
@@ -43,9 +43,9 @@ while run:
             if event.key == pygame.K_ESCAPE:
                 run = False
 
-    p1 = Point(-1, lineFunction(-1),0)
-    p2 = Point(1, lineFunction(1),0)
-    pygame.draw.line(screen, gray, (p1.PixelCoordX(), p1.PixelCoordY()), (p2.PixelCoordX(), p2.PixelCoordY()), 2)
+    #p1 = Point(-1, lineFunction(-1),0)
+    #p2 = Point(1, lineFunction(1),0)
+    #pygame.draw.line(screen, gray, (p1.PixelCoordX(), p1.PixelCoordY()), (p2.PixelCoordX(), p2.PixelCoordY()), 2)
 
     p1 = Point(-1, perceptron.guessY(-1),0)
     p2 = Point(1, perceptron.guessY(1),0)
@@ -56,10 +56,7 @@ while run:
         desired = point.breed
         perceptron.train(point.GetInputs(), desired)
         guess = perceptron.predict(point.GetInputs())
-        if desired == guess:
-            pygame.draw.circle(screen, white, (point.PixelCoordX(), point.PixelCoordY()), 8)
-        else:
-            pygame.draw.circle(screen, blue, (point.PixelCoordX(), point.PixelCoordY()), 8)
+
 
 
     pygame.display.update()
