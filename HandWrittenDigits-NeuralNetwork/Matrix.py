@@ -146,3 +146,6 @@ class Matrix:
         else:
             print("columns of the first matrix must be equal to the rows of the second matrix")
             return None
+
+    def __repr__(self):
+        return f'matrix ->rows: {self.rows}, cols: {self.cols}, content=>{self.matrix}'

@@ -42,13 +42,10 @@ rows = height // resolution
 
 neuralNetwork = NeuralNetwork(2, 2, 1)
 # neuralNetwork.learning_rate =
-
-
-
 run = True
 while run:
     clock.tick(fps)
-    screen.fill(white)
+    screen.fill(black)
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False
@@ -56,10 +53,10 @@ while run:
             if event.key == pygame.K_ESCAPE:
                 run = False
 
-
     for i in range(2000):
         data = training_data[random.randint(0, len(training_data) - 1)]
         neuralNetwork.Train(data["inputs"], data["outputs"])
+
 
     for x in range(rows):
         for y in range(columns):
@@ -69,7 +66,7 @@ while run:
             _y = neuralNetwork.FeedForward(inputs)
             val = int(_y[0] * 255)
 
-            color = (val, val, val)
+            color = (val, val, val )
             pygame.draw.rect(screen, color, pygame.Rect( x*resolution, y * resolution, resolution , resolution))
 
 
