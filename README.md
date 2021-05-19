@@ -2,6 +2,13 @@
 ### The code is really messy, any help is welcome
 ## 1 . Handwritten Digits 
  ---
+ #### ideas to how to improve this neural network
+ 
+ to make this neural network more accurate you can try to train the neural network in terms of epochs,
+ and shuffle the training data after each epoch training is finish. and also maybe implementing the softmax can help:
+ for more ressources: https://www.youtube.com/watch?v=XJ7HLz9VYz0&list=PLRqwX-V7Uu6aCibgK1PTWWu9by6XFdCfh
+ 
+ ---
 
  ### controls
     "s" or "space" : to test or run the model after drawing the digits
