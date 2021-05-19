@@ -9,14 +9,19 @@ from ui import *
 from scipy.interpolate import RegularGridInterpolator
 from math import floor
 import pickle
+
 #pygame configurations
 pygame.init()
 screen = pygame.display.set_mode(size)
 pygame.display.set_caption("HandWritten digits Neural Network")
 clock = pygame.time.Clock()
-brush = pygame.image.load("Brush/brush.png")
-brush = pygame.transform.scale(brush, (128, 128))
+
+brush1 = pygame.image.load("Brush/brush1.png")
+brush2 = pygame.image.load("Brush/brush2.png")
+brush = pygame.transform.scale(brush2, (128, 128))
+
 fps = 60
+
 Message = TextUI("Preparing the data and training the model, This might take a couple of minute,", (width//2, 80), (255,255, 255))
 Message.Render(screen)
 pygame.display.update()
@@ -34,7 +39,7 @@ test_images = idx2numpy.convert_from_file(testImages)
 test_labels = idx2numpy.convert_from_file(testLabels)
 
 #if it not accurate increase the number of training data , range ( 1000.......120000)
-number_of_training_data = 100000
+number_of_training_data = 100
 training_data = train_images[:number_of_training_data]
 testing_data = test_images[:200]
 
@@ -84,7 +89,7 @@ def trainEpoch():
 
     print("epoch training finished")
 
-trainEpoch()
+#trainEpoch()
 
 #save our trained model
 filename = 'trainedModel'
@@ -92,6 +97,7 @@ filename = 'trainedModel'
 
 #load the saved trained model
 neuralNetwork = pickle.load(open(filename, 'rb'))
+
 def testModel():
     correctGuess = 0
     percentage = 0
@@ -174,6 +180,8 @@ while run:
 
     if ResetButton.state == True:
         drawArray = []
+        ad = []
+        temp = np.empty((28, 28))
         screen.fill((0, 0, 0))
         pygame.draw.rect(screen, (255,255, 255), pygame.Rect(offset[0], offset[1],560, 560))
 
@@ -187,6 +195,7 @@ while run:
         Start = False
         ad = []
         drawArray = []
+        temp = np.empty((28, 28))
         for x in range(width):
             for y in range(height):
                 if x >= offset[0] and x < offset[0] + 560:
@@ -196,7 +205,7 @@ while run:
                         testArray[x - offset[0]][y-offset[1]] = average_color
         #reshaping the array from 560 to 28
         ad = regrid( testArray, 28, 28)
-        temp = np.empty((28, 28))
+
         for x in range(28):
             for y in range(28):
                 temp[x][y] = ad[y][x]
