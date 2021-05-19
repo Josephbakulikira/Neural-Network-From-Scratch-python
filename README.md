@@ -5,7 +5,8 @@
  #### ideas to how to improve this neural network
  
  to make this neural network more accurate you can try to train the neural network in terms of epochs,
- and shuffle the training data after each epoch training is finish. and also maybe implementing the softmax can help:
+ and shuffle the training data after each epoch training is finish. and also maybe implementing the softmax can help,
+ maybe also you can try to tweak the learning rate, to see different result :
  for more ressources: https://www.youtube.com/watch?v=XJ7HLz9VYz0&list=PLRqwX-V7Uu6aCibgK1PTWWu9by6XFdCfh
  
  ---
