@@ -2,7 +2,7 @@ import pygame
 from constants import *
 
 class Button:
-    def __init__(self, text, position = (width-230, 600) , w = 100, h= 50, border=10, color = (0, 0, 0), borderColor = (64, 123, 158)):
+    def __init__(self, text, position = (width-230, 600) , w = 100, h= 50, border=10, color = (0, 0, 0), borderColor = (0, 0, 0)):
         self.text = text
         self.position = position
         self.w = w
@@ -59,7 +59,6 @@ class ToggleButton:
         self.position = position
         self.w = w
         self.h = h
-
         self.state = state
         self.temp = (activeColor, color)
         self.activeColor = activeColor

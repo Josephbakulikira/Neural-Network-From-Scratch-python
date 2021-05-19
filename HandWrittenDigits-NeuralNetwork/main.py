@@ -41,7 +41,7 @@ test_labels = idx2numpy.convert_from_file(testLabels)
 #if it not accurate increase the number of training data , range ( 1000.......120000)
 number_of_training_data = 100
 training_data = train_images[:number_of_training_data]
-testing_data = test_images[:200]
+testing_data = test_images[:400]
 
 #preparing the data
 train_data_images = [[] for i in range(len(training_data))]
@@ -141,7 +141,10 @@ PredictionText = TextUI("Prediction: ? ", (width//2, 180), (255, 255, 255))
 PredictionText.fontSize = 40
 
 ResetButton = Button("Reset", (width - 140,100))
+ResetButton.color = (66, 110, 134)
+ResetButton.temp = (66, 110, 134)
 ResetButton.borderColor=  (0, 0, 0)
+
 
 RunButton = Button("Run", (width//2-60, height - 150))
 RunButton.borderColor=  (0, 0, 0)
@@ -219,6 +222,7 @@ while run:
         PredictionText.Render(screen)
         print(_predict)
 
+    #display the resized display
     if len(drawArray) > 0:
         for x in range(28):
             for y in range(28):
