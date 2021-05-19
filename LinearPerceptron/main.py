@@ -14,7 +14,7 @@ fps = 30
 
 points = []
 
-for i in range(20):
+for i in range(50):
     x = random.uniform(-1, 1)
     y = random.uniform(-1, 1)
     breed = 0

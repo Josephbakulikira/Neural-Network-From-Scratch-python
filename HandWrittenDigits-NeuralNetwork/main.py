@@ -1,3 +1,5 @@
+#subscribe to my youtube channel for support : https://www.youtube.com/c/Auctux
+
 import pygame
 import idx2numpy
 import numpy as np
